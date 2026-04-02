@@ -17,7 +17,10 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'kubectl apply -f k8s/'
+                withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
+    sh 'kubectl get nodes'
+    sh 'kubectl apply -f k8s/'
+}
             }
         }
     }
