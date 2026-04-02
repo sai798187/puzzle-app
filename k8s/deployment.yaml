@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puzzle-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: puzzle
+  template:
+    metadata:
+      labels:
+        app: puzzle
+    spec:
+      containers:
+      - name: puzzle-container
+        image: your-dockerhub/puzzle-app:latest
+        ports:
+        - containerPort: 5000
