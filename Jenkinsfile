@@ -20,7 +20,7 @@ pipeline {
             steps {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
                     sh '''
-                    sonar-scanner \
+                     /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner \
                     -Dsonar.projectKey=puzzle-app \
                     -Dsonar.sources=.
                     '''
