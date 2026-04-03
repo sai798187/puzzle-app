@@ -23,6 +23,9 @@ pipeline {
                      /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner \
                     -Dsonar.projectKey=puzzle-app \
                     -Dsonar.sources=.
+					 -Dsonar.exclusions=venv/**,__pycache__/** \
+                      -Dsonar.host.url=$SONAR_HOST_URL \
+                      -Dsonar.login=$SONAR_AUTH_TOKEN
                     '''
                 }
             }
