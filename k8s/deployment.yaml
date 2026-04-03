@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: puzzle-container
-        image: your-dockerhub/puzzle-app:latest
+        image: rogan07sg/puzzle-app:latest
         ports:
         - containerPort: 5000
