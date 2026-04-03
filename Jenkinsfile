@@ -20,7 +20,7 @@ pipeline {
             steps {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
                     sh '''
-                    sonar-install \
+                    sonar-scanner \
                     -Dsonar.projectKey=puzzle-app \
                     -Dsonar.sources=.
                     '''
