@@ -19,6 +19,8 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
+					script{
+						def scannerHome = tool 'sonar-scanner'
                     sh '''
                      /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-install \
                     -Dsonar.projectKey=puzzle-app \
@@ -30,6 +32,7 @@ pipeline {
                 }
             }
         }
+		}
 
         stage('Quality Gate') {
             steps {
