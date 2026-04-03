@@ -16,19 +16,17 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
+       stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv("${SONARQUBE_ENV}") {
-					script{
-						def scannerHome = tool 'sonar-scanner'
-                    sh '''
-                     {$scannerHome}/sonar-scanner \
-                    -Dsonar.projectKey=puzzle-app \
-                    -Dsonar.sources=.
-					 -Dsonar.exclusions=venv/**,__pycache__/** \
-                      -Dsonar.host.url=$SONAR_HOST_URL \
-                      -Dsonar.login=$SONAR_AUTH_TOKEN
-                    '''
+                    script {
+                        def scannerHome = tool 'sonar-scanner'
+                        sh """
+                        ${scannerHome}/bin/sonar-scanner \
+                        -Dsonar.projectKey=puzzle-app \
+                        -Dsonar.sources=. \
+                        -Dsonar.exclusions=venv/**,__pycache__/**
+                        """
                 }
             }
         }
