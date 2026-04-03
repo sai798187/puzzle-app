@@ -22,7 +22,7 @@ pipeline {
 					script{
 						def scannerHome = tool 'sonar-scanner'
                     sh '''
-                     /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-install \
+                     {$scannerHome}/sonar-scanner \
                     -Dsonar.projectKey=puzzle-app \
                     -Dsonar.sources=.
 					 -Dsonar.exclusions=venv/**,__pycache__/** \
