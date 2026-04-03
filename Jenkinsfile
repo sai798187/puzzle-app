@@ -9,12 +9,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/ROGAN07sg/puzzle-app.git'
-            }
-        }
-
         stage('Build Artifact') {
             steps {
                 sh 'echo "Building app..."'
