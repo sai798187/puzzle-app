@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "rogan07sg/puzzle-app"
-        NEXUS_URL = "http://<nexus-ip>:8081"
+        NEXUS_URL = "http://13.127.65.135:8081"
         SONARQUBE_ENV = "SQ"
     }
 
