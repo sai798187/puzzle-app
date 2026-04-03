@@ -11,7 +11,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/your-repo/puzzle-app.git'
+                git 'https://github.com/ROGAN07sg/puzzle-app.git'
             }
         }
 
