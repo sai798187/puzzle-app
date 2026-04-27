@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "rogan07sg/puzzle-app"
-        NEXUS_URL = "http://13.127.65.135:8081"
-        SONARQUBE_ENV = "SQ"
+        DOCKER_IMAGE = "sai798187/puzzle-app"
+        NEXUS_URL = "http://13.220.142.106:8081"
+        SONARQUBE_ENV = "sq"
     }
 
     stages {
